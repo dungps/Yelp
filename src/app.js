@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text } from "react-native";
+import { Text, StatusBar, View } from "react-native";
 import { Provider } from "react-redux";
 import RouterWithNavigator from "./components/AppNavigator";
 
@@ -26,7 +26,10 @@ class App extends Component {
 
     return (
       <Provider store={this.state.store}>
-        <RouterWithNavigator />
+        <View style={{ flex: 1 }}>
+          <StatusBar backgroundColor="#fff" barStyle="dark-content" />
+          <RouterWithNavigator />
+        </View>
       </Provider>
     );
   }

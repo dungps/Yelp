@@ -19,7 +19,7 @@ const configureStore = (onComplate: ?() => void) => {
   const store = autoRehydrate()(createAppStore)(reducers);
   persistStore(
     store,
-    { storage: AsyncStorage, blacklist: ["data"] },
+    { storage: AsyncStorage, whitelist: ["settings"] },
     onComplate
   );
 
